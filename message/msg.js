@@ -19,6 +19,7 @@ const { addPlayGame, getJawabanGame, isPlayGame, cekWaktuGame, getGamePosi } = r
 const tictac = require("../lib/tictac");
 const _prem = require("../lib/premium");
 
+const logger = require('logger')
 const fs = require ("fs");
 const moment = require("moment-timezone");
 const util = require("util");
@@ -989,5 +990,6 @@ module.exports = async(conn, msg, m, setting, store, welcome) => {
 		}
 	} catch (err) {
 		console.log(color('[ERROR]', 'red'), err)
+		logger.error("An error occurred.", error);
 	}
 }
